@@ -92,6 +92,11 @@ else
     end
     exit 0
   when 'empty'
+    unless ARGV.include? "--force"
+      puts "Are you sure? This will empty your complete ssh config!"
+      puts "If yes, use `ghost-ssh empty --force`"
+      exit 1
+    end
     print "  [Emptying] "
     Ghost::SshConfig.empty!
     puts "Done."
