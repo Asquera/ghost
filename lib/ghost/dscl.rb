@@ -29,7 +29,7 @@ module Ghost
           flush!
           find_by_host(host)
         else
-          raise "Can not overwrite existing record"
+          raise AlreadyExists, "Can not overwrite existing record"
         end      
       end
       

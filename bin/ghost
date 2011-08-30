@@ -35,7 +35,7 @@ else
       rescue SocketError
         $stderr.puts "Cannot find ip for host"
         exit 3
-      rescue StandardError
+      rescue Ghost::Host::AlreadyExists
         $stderr.puts "Cannot overwrite an existing entry. Use the modify subcommand"
         exit 3
       end

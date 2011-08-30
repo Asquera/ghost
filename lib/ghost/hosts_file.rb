@@ -56,7 +56,7 @@ module Ghost
           
           new_host
         else
-          raise "Can not overwrite existing record"
+          raise AlreadyExists, "Can not overwrite existing record"
         end      
       end
       
