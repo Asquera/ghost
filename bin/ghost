@@ -82,8 +82,8 @@ else
     
     puts "Listing #{hosts.size} host(s):"
     
-    hosts.each do |host|
-      puts "#{host.name.rjust(pad+2)} -> #{host.ip}"
+    hosts.each do |h|
+      puts "#{h.name.rjust(pad+2)} -> #{h.ip}"
     end
     exit 0
   when 'empty'
@@ -93,8 +93,8 @@ else
     exit 0
   when 'export'
     hosts = Ghost::Host.adapter.list
-    hosts.each do |host|
-      puts "#{host.name} #{host.ip}"
+    hosts.each do |h|
+      puts "#{h.name} #{h.ip}"
     end
     exit 0
   when 'import'
