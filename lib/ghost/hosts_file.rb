@@ -5,21 +5,6 @@ module Ghost
   class HostsFile
     include Ghost::Host
     
-    attr_reader :host, :ip
-    
-    def initialize(host, ip)
-      @host = host
-      @ip = ip
-    end
-    
-    def ==(other)
-      @host == other.host && @ip = other.ip
-    end
-    
-    alias :to_s :host
-    alias :name :host
-    alias :hostname :host
-    
     @@hosts_file = '/etc/hosts'
     @@permanent_hosts = [self.new("localhost",      "127.0.0.1"),
                          self.new(`hostname`.chomp, "127.0.0.1")]

@@ -94,19 +94,7 @@ module Ghost
         match[1] unless match.nil?
       end
     end
-    
-    def initialize(host, ip=nil)
-      @host = host
-      @ip = ip
-    end
-    
-    def hostname
-      @host
-    end
-    alias :to_s :hostname
-    alias :host :hostname
-    alias :name :hostname
-    
+
     def ip
       @ip ||= self.class.send(:parse_ip, dump)
     end
